@@ -1,0 +1,108 @@
+.steplist {
+  @include responsive(sm, null) {
+    height: 48px;
+  }
+  border-radius: 30px;
+  background-color: #f0f0f0;
+  margin-bottom: 60px;
+
+  &__single {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 12px 0 12px 20px;
+
+    &:first-child {
+      border-top-left-radius: 30px;
+      border-bottom-left-radius: 30px;
+    }
+
+    &.current {
+      background-color: $primary-color;
+      position: relative;
+
+      &:before {
+        content: '';
+        width: 0;
+        height: 0;
+        position: absolute;
+        left: 0;
+        border-top: 24px solid transparent;
+        border-bottom: 24px solid transparent;
+        border-left: 10px solid $secondary-color;
+      }
+
+      &:after {
+        content: '';
+        width: 0;
+        height: 0;
+        position: absolute;
+        right: -10px;
+        border-top: 24px solid transparent;
+        border-bottom: 24px solid transparent;
+        border-left: 10px solid $primary-color;
+      }
+
+      &:first-child {
+        &:before {
+          display: none;
+        }
+      }
+
+      &:last-child {
+        &:after {
+          display: none;
+        }
+
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+      }
+
+      p {
+        color: #fff;
+      }
+
+    }
+
+    &.passed {
+      position: relative;
+      background-color: $secondary-color;
+
+      p {
+        color: #fff;
+      }
+
+      &:before {
+        content: '';
+        width: 0;
+        height: 0;
+        position: absolute;
+        right: -9px;
+        z-index: 3;
+        border-top: 24px solid transparent;
+        border-bottom: 24px solid transparent;
+        border-left: 10px solid $secondary-color;
+      }
+
+      &:after {
+        content: '';
+        width: 0;
+        height: 0;
+        position: absolute;
+        right: -10px;
+        z-index: 2;
+        border-top: 24px solid transparent;
+        border-bottom: 24px solid transparent;
+        border-left: 10px solid #fff;
+      }
+    }
+
+    p {
+      margin: 0;
+      font-weight: bold;
+      font-size: 1.1rem;
+      line-height: 1.1rem;
+      color: $text-secondary-color;
+    }
+  }
+}

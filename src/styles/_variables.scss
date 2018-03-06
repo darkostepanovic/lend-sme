@@ -1,0 +1,29 @@
+// container
+$container: 1280px;
+
+// grid columns
+$grid-columns: 12;
+
+// breakpoints
+$breakpoint: (
+        sm: 768px,
+        md: 991px,
+        lg: 1190px
+);
+
+// grid spacing
+$gutter: 32px;
+
+// colors
+$primary-color: #FF5A5F;
+$secondary-color: #1F95CE;
+$text-primary-color: #424242;
+$text-secondary-color: #7D7D7D;
+
+// fonts
+
+$default-font-size: 13px;
+
+// header
+$header-height: 76px;
+$header-height-mobile: 56px;

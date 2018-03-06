@@ -1,0 +1,62 @@
+.header {
+  height: $header-height;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+
+  @include responsive(null, md) {
+    height: $header-height-mobile;
+  }
+
+  .container, .row--flex {
+    height: 100%;
+  }
+
+  &__content {
+    align-items: center;
+    justify-content: space-between;
+
+    &--language {
+      width: 80px;
+      text-align: center;
+      position: relative;
+
+      a {
+        color: $primary-color;
+        span {
+          color: $text-primary-color;
+        }
+
+        &:hover + .dropdown-menu {
+          opacity: 1;
+          visibility: visible;
+          transition: all 0.3s ease;
+          top: 100%;
+        }
+      }
+
+      .dropdown-menu {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        width: 100%;
+        background-color: #fff;
+        border: 1px solid #f0f0f0;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        top: 150%;
+
+        &:hover {
+          opacity: 1;
+          visibility: visible;
+          top: 100%;
+        }
+
+        ul {
+          li {
+            padding: 5px 0;
+          }
+        }
+      }
+    }
+  }
+}

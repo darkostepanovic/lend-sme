@@ -1,0 +1,89 @@
+.step-form {
+  @include responsive(null, md) {
+    padding: 0 $gutter;
+  }
+
+  &__info {
+
+    &--text {
+      flex: 0 0 50%;
+
+      @include responsive(null, md) {
+        flex: 0 0 100%;
+        padding: 0 $gutter;
+      }
+
+      p {
+        padding: 0 15px;
+        border-left: 2px solid $text-primary-color;
+        color: $text-secondary-color;
+      }
+    }
+
+    &--autosave {
+      flex: 0 0 50%;
+
+      @include responsive(null, md) {
+        flex: 0 0 100%;
+        padding: 0 $gutter;
+      }
+    }
+
+    @include responsive(null, md) {
+      padding: 0 $gutter;
+    }
+  }
+
+  &__form {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+
+    &--single-input {
+      width: 30%;
+      @include responsive(null, md) {
+        width: 100%;
+      }
+
+      p {
+        display: inline-block;
+        margin-top: 0;
+        margin-right: 10px;
+      }
+
+      .select-wrapper {
+
+        .select-dropdown {
+          @include responsive(null, md) {
+            width: 100%;
+          }
+        }
+          @include responsive(null, md) {
+            .caret {
+              right: 15px;
+            }
+          }
+      }
+
+      &.radio-input {
+        label {
+          display: block;
+          width: 100%;
+        }
+      }
+
+      &.text-input {
+        label {
+          padding-left: 10px;
+        }
+
+        input {
+          @include responsive(null,md) {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
