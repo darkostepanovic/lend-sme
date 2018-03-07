@@ -22,7 +22,7 @@ class StepOne extends Component {
                     <StepOneForm/>
                 </div>
                 <div className="row">
-                    <h5><a href>+ Add contact person</a></h5>
+                    <h5><a>+ Add contact person</a></h5>
                 </div>
             </div>
         )

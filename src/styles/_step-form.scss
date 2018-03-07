@@ -41,7 +41,7 @@
     width: 100%;
 
     &--single-input {
-      width: 30%;
+      width: 33.333%;
       @include responsive(null, md) {
         width: 100%;
       }
@@ -50,6 +50,14 @@
         display: inline-block;
         margin-top: 0;
         margin-right: 10px;
+      }
+
+      label {
+        width: auto;
+      }
+
+      input {
+        width: 90%;
       }
 
       .select-wrapper {
@@ -81,6 +89,26 @@
         input {
           @include responsive(null,md) {
             width: 100%;
+          }
+        }
+
+        .prefix {
+          position: absolute;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          font-size: 1rem;
+          -webkit-transition: color .2s;
+          -o-transition: color .2s;
+          transition: color .2s;
+
+          ~ input {
+            margin-left: 2.5rem;
+            width: calc(100% - 4.3rem);
+
+            @include responsive(null, md) {
+              width: calc(100% - 2.5rem);
+            }
           }
         }
       }

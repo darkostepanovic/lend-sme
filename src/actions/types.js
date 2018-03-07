@@ -1,0 +1,1 @@
+export const HANDLE_FORM_DATA = 'HANDLE_FORM_DATA';

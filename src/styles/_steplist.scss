@@ -12,6 +12,10 @@
     align-items: center;
     padding: 12px 0 12px 20px;
 
+    @include responsive(null,md) {
+      display: none!important;
+    }
+
     &:first-child {
       border-top-left-radius: 30px;
       border-bottom-left-radius: 30px;
@@ -20,6 +24,17 @@
     &.current {
       background-color: $primary-color;
       position: relative;
+
+      @include responsive(null, md) {
+        display: flex!important;
+        width: 100%;
+        border-radius: 0;
+
+        &:before, &:after {
+          display: none!important;
+        }
+      }
+
 
       &:before {
         content: '';
@@ -67,6 +82,9 @@
     &.passed {
       position: relative;
       background-color: $secondary-color;
+      @include responsive(null, md) {
+        display: none;
+      }
 
       p {
         color: #fff;
