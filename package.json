@@ -5,6 +5,7 @@
   "dependencies": {
     "jquery": "^3.3.1",
     "materialize-css": "^0.100.2",
+    "moment": "^2.21.0",
     "node-sass-chokidar": "^0.0.3",
     "npm-run-all": "^4.1.2",
     "react": "^16.2.0",

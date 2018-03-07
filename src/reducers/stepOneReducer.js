@@ -7,7 +7,7 @@ const initialState = {
         lastName: '',
         signingAuthority: 0,
         function: '',
-        dob: '',
+        dob: new Date(0),
         streetAddress: '',
         addressNumber: '',
         postcode: '',

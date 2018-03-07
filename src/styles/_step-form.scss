@@ -47,6 +47,7 @@
       }
 
       p {
+        position: relative;
         display: inline-block;
         margin-top: 0;
         margin-right: 10px;
@@ -97,18 +98,38 @@
           height: 40px;
           display: flex;
           align-items: center;
+          justify-content: center;
           font-size: 1rem;
           -webkit-transition: color .2s;
           -o-transition: color .2s;
           transition: color .2s;
+          border: 1px solid #9e9e9e;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+
+          &.active {
+            border-color: $secondary-color;
+          }
 
           ~ input {
             margin-left: 2.5rem;
             width: calc(100% - 4.3rem);
 
+            &:focus {
+              border-left: none;
+            }
+
             @include responsive(null, md) {
               width: calc(100% - 2.5rem);
             }
+          }
+        }
+
+        &.phone-number {
+          input {
+            border-left: none;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
           }
         }
       }

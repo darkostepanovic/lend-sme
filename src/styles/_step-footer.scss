@@ -1,0 +1,33 @@
+.step-footer {
+  margin-bottom: 60px;
+
+  .divider {
+    height: 3px;
+    margin: 40px 0;
+    background-color: #f0f0f0;
+  }
+
+  &__buttons {
+    align-items: center;
+    justify-content: space-between;
+
+    i {
+      vertical-align: bottom;
+    }
+
+    .btn {
+      margin-left: 15px;
+      border: 1px solid $primary-color;
+
+      &:focus {
+        background-color: inherit;
+        color: $primary-color;
+
+        &:hover {
+          background-color: $primary-color;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

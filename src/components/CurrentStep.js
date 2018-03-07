@@ -5,6 +5,7 @@ import StepOne from "./steps/StepOne";
 import StepTwo from "./steps/StepTwo";
 import StepThree from "./steps/StepThree";
 import StepFour from "./steps/StepFour";
+import StepFooter from "./StepFooter";
 
 class CurrentStep extends Component {
 
@@ -30,6 +31,7 @@ class CurrentStep extends Component {
                     <div className="col-sm-6 col-sm-offset-3">
                         <StepList currentStep={this.props.match.params.step}/>
                         {this.renderCurrentStep()}
+                        <StepFooter currentStep={this.props.match.params.step}/>
                     </div>
                 </div>
             </div>
