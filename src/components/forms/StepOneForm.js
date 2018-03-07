@@ -28,12 +28,6 @@ class StepOneForm extends Component {
         this.props.handleFormData('country', e.target.value);
     };
 
-    renderPhonePrefix = () => {
-        return (
-            <div className="prefix"><span>+42</span></div>
-        )
-    };
-
     componentDidMount() {
         const signingAuthority = ReactDOM.findDOMNode(this.refs.signingAuthority);
         const country = ReactDOM.findDOMNode(this.refs.country);
