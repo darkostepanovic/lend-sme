@@ -50,9 +50,9 @@ class StepOneForm extends Component {
     }
 
     render() {
-        console.log(this.props.stepOne.formData);
+        // console.log(this.props.stepOne.formData);
         return (
-            <form className="step-form__form" ref='stepForm'>
+            <form className="step-form__form" ref='stepForm' name='stepForm' action="">
                 <div className="step-form__form--single-input radio-input" id="radio-input">
                     <label htmlFor="radio-input">Title*</label>
                     <p>
@@ -62,7 +62,8 @@ class StepOneForm extends Component {
                             id="mr"
                             checked={this.props.stepOne.formData.title === '1'}
                             onChange={this.handleRadioButtons}
-                            value={1} />
+                            value={1}
+                        />
                         <label htmlFor="mr">Mr.</label>
                     </p>
                     <p>
@@ -84,6 +85,7 @@ class StepOneForm extends Component {
                         className="validate"
                         value={this.props.stepOne.formData.firstName}
                         onChange={(e) => {this.props.handleFormData('firstName', e.target.value)}}
+                        required={true}
                     />
                     <label htmlFor="first_name" className={this.props.stepOne.formData.firstName !== '' ? 'active' : ''}>First Name *</label>
                 </div>
@@ -98,7 +100,7 @@ class StepOneForm extends Component {
                     <label htmlFor="last_name" className={this.props.stepOne.formData.lastName !== '' ? 'active' : ''}>Last Name *</label>
                 </div>
                 <div className="input-field step-form__form--single-input select-input">
-                    <select ref='signingAuthority' defaultValue='0'>
+                    <select ref='signingAuthority' defaultValue={this.props.stepOne.formData.signingAuthority}>
                         <option value="0" disabled>Signing authority *</option>
                         <option value="1">Single</option>
                         <option value="2">Collective</option>

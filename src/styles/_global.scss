@@ -21,6 +21,7 @@ body {
 
   a {
     color: inherit;
+    cursor: pointer;
     text-decoration: none;
   }
 
@@ -32,5 +33,13 @@ body {
 
   .clear {
     clear: both;
+  }
+
+  .color-primary {
+    color: $primary-color;
+  }
+
+  .color-secondary {
+    color: $secondary-color;
   }
 }
