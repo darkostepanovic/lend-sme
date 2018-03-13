@@ -29,7 +29,7 @@ class AddNewPerson extends Component {
 
     render() {
         return (
-            <form className="step-form__form">
+            <div className="step-form__form">
                 <div className="step-form__form--single-input radio-input" id="newPersonRadioInput">
                     <label htmlFor="newPersonRadioInput">Title*</label>
                     <p>
@@ -61,6 +61,7 @@ class AddNewPerson extends Component {
                         className="validate"
                         value={this.props.stepOne.formData.newPersonInfo.firstName}
                         onChange={(e) => {this.props.handleNewPersonData('firstName', e.target.value)}}
+                        required={true}
                     />
                     <label htmlFor="first_name" className={this.props.stepOne.formData.newPersonInfo.firstName !== '' ? 'active' : ''}>First Name *</label>
                 </div>
@@ -71,11 +72,12 @@ class AddNewPerson extends Component {
                         className="validate"
                         value={this.props.stepOne.formData.newPersonInfo.lastName}
                         onChange={(e) => {this.props.handleNewPersonData('lastName', e.target.value)}}
+                        required={true}
                     />
                     <label htmlFor="last_name" className={this.props.stepOne.formData.newPersonInfo.lastName !== '' ? 'active' : ''}>Last Name *</label>
                 </div>
                 <div className="input-field step-form__form--single-input select-input">
-                    <select ref='newPersonSigningAuthority' defaultValue='0'>
+                    <select ref='newPersonSigningAuthority' defaultValue='0' required={true}>
                         <option value="0" disabled>Signing authority *</option>
                         <option value="1">Single</option>
                         <option value="2">Collective</option>
@@ -90,6 +92,7 @@ class AddNewPerson extends Component {
                         className="validate"
                         value={this.props.stepOne.formData.newPersonInfo.function}
                         onChange={(e) => {this.props.handleNewPersonData('function', e.target.value)}}
+                        required={true}
                     />
                     <label htmlFor="function" className={this.props.stepOne.formData.newPersonInfo.function !== '' ? 'active' : ''}>Function *</label>
                 </div>
@@ -104,6 +107,7 @@ class AddNewPerson extends Component {
                         className="validate"
                         value={this.props.stepOne.formData.newPersonInfo.phone}
                         onChange={(e) => {this.props.handleNewPersonData('phone', e.target.value)}}
+                        required={true}
                     />
                     <label htmlFor="newPersonPhone" className={this.props.stepOne.formData.newPersonInfo.phone !== '' ? 'active' : ''}>Phone No. *</label>
                 </div>
@@ -114,6 +118,7 @@ class AddNewPerson extends Component {
                         className="validate"
                         value={this.props.stepOne.formData.newPersonInfo.streetAddress}
                         onChange={(e) => {this.props.handleNewPersonData('streetAddress', e.target.value)}}
+                        required={true}
                     />
                     <label htmlFor="newPersonStreetAddress" className={this.props.stepOne.formData.newPersonInfo.streetAddress !== '' ? 'active' : ''}>Street address *</label>
                 </div>
@@ -124,6 +129,7 @@ class AddNewPerson extends Component {
                         className="validate"
                         value={this.props.stepOne.formData.newPersonInfo.addressNumber}
                         onChange={(e) => {this.props.handleNewPersonData('addressNumber', e.target.value)}}
+                        required={true}
                     />
                     <label htmlFor="newPersonAddressNumber" className={this.props.stepOne.formData.newPersonInfo.addressNumber !== '' ? 'active' : ''}>Address number *</label>
                 </div>
@@ -134,6 +140,7 @@ class AddNewPerson extends Component {
                         className="validate"
                         value={this.props.stepOne.formData.newPersonInfo.postcode}
                         onChange={(e) => {this.props.handleNewPersonData('postcode', e.target.value)}}
+                        required={true}
                     />
                     <label htmlFor="newPersonPostcode" className={this.props.stepOne.formData.newPersonInfo.postcode !== '' ? 'active' : ''}>Postcode *</label>
                 </div>
@@ -144,11 +151,12 @@ class AddNewPerson extends Component {
                         className="validate"
                         value={this.props.stepOne.formData.newPersonInfo.city}
                         onChange={(e) => {this.props.handleNewPersonData('city', e.target.value)}}
+                        required={true}
                     />
                     <label htmlFor="newPersonCity" className={this.props.stepOne.formData.newPersonInfo.city !== '' ? 'active' : ''}>City *</label>
                 </div>
                 <div className="input-field step-form__form--single-input select-input">
-                    <select ref='newPersonCountry' defaultValue='0'>
+                    <select ref='newPersonCountry' defaultValue='0' required={true}>
                         <option value="0" disabled>Choose country: *</option>
                         <option value="1">Switzerland</option>
                         <option value="2">Lichtenstein</option>
@@ -162,10 +170,11 @@ class AddNewPerson extends Component {
                         className="validate"
                         value={this.props.stepOne.formData.newPersonInfo.email}
                         onChange={(e) => {this.props.handleNewPersonData('email', e.target.value)}}
+                        required={true}
                     />
                     <label htmlFor="newPersonEmail" className={this.props.stepOne.formData.newPersonInfo.email !== '' ? 'active' : ''}>Email *</label>
                 </div>
-            </form>
+            </div>
         )
     }
 }

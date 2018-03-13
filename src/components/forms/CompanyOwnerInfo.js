@@ -32,7 +32,7 @@ class CompanyOwnerInfo extends Component {
 
     render() {
         return (
-            <form className="step-form__form company-owner">
+            <div className="step-form__form company-owner">
                 <div className="input-field step-form__form--single-input text-input">
                     <input
                         id="company_owner_first_name"
@@ -40,6 +40,7 @@ class CompanyOwnerInfo extends Component {
                         className="validate"
                         value={this.props.stepOne.formData.companyOwnerInfo.firstName}
                         onChange={(e) => {this.props.handleCompanyOwnerData('firstName', e.target.value)}}
+                        required={true}
                     />
                     <label htmlFor="company_owner_first_name" className={this.props.stepOne.formData.companyOwnerInfo.firstName !== '' ? 'active' : ''}>First Name *</label>
                 </div>
@@ -50,6 +51,7 @@ class CompanyOwnerInfo extends Component {
                         className="validate"
                         value={this.props.stepOne.formData.companyOwnerInfo.lastName}
                         onChange={(e) => {this.props.handleCompanyOwnerData('lastName', e.target.value)}}
+                        required={true}
                     />
                     <label htmlFor="company_owner_last_name" className={this.props.stepOne.formData.companyOwnerInfo.lastName !== '' ? 'active' : ''}>Last Name *</label>
                 </div>
@@ -64,6 +66,7 @@ class CompanyOwnerInfo extends Component {
                         className="validate"
                         value={this.props.stepOne.formData.companyOwnerInfo.streetAddress}
                         onChange={(e) => {this.props.handleCompanyOwnerData('streetAddress', e.target.value)}}
+                        required={true}
                     />
                     <label htmlFor="companyOwnerStreetAddress" className={this.props.stepOne.formData.companyOwnerInfo.streetAddress !== '' ? 'active' : ''}>Street address *</label>
                 </div>
@@ -74,6 +77,7 @@ class CompanyOwnerInfo extends Component {
                         className="validate"
                         value={this.props.stepOne.formData.companyOwnerInfo.addressNumber}
                         onChange={(e) => {this.props.handleCompanyOwnerData('addressNumber', e.target.value)}}
+                        required={true}
                     />
                     <label htmlFor="companyOwnerAddressNumber" className={this.props.stepOne.formData.companyOwnerInfo.addressNumber !== '' ? 'active' : ''}>Address number *</label>
                 </div>
@@ -84,6 +88,7 @@ class CompanyOwnerInfo extends Component {
                         className="validate"
                         value={this.props.stepOne.formData.companyOwnerInfo.postcode}
                         onChange={(e) => {this.props.handleCompanyOwnerData('postcode', e.target.value)}}
+                        required={true}
                     />
                     <label htmlFor="companyOwnerPostcode" className={this.props.stepOne.formData.companyOwnerInfo.postcode !== '' ? 'active' : ''}>Postcode *</label>
                 </div>
@@ -94,18 +99,19 @@ class CompanyOwnerInfo extends Component {
                         className="validate"
                         value={this.props.stepOne.formData.companyOwnerInfo.city}
                         onChange={(e) => {this.props.handleCompanyOwnerData('city', e.target.value)}}
+                        required={true}
                     />
                     <label htmlFor="companyOwnerCity" className={this.props.stepOne.formData.companyOwnerInfo.city !== '' ? 'active' : ''}>City *</label>
                 </div>
-                <div className="input-field step-form__form--single-input select-input">
-                    <select ref='companyOwnerCountry' defaultValue='0'>
+                <div className="input-field step-form__form--single-input select-input" >
+                    <select ref='companyOwnerCountry' defaultValue='0' required={true}>
                         <option value="0" disabled>Choose country: *</option>
                         <option value="1">Switzerland</option>
                         <option value="2">Lichtenstein</option>
                     </select>
                     <label>Country *</label>
                 </div>
-            </form>
+            </div>
         )
     }
 }

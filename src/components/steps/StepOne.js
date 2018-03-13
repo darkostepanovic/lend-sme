@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
 import StepOneForm from "../forms/StepOneForm";
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import * as actions from '../../actions';
 import CompanyOwnerInfo from "../forms/CompanyOwnerInfo";
 import AddNewPerson from "../forms/AddNewPerson";
 
 class StepOne extends Component {
+
+    handleNext = (e) => {
+        e.preventDefault();
+        const currentStep = Number(this.props.currentStep);
+        const nextStep = currentStep + 1;
+        if (nextStep < 5) {
+            this.props.history.push(`/${nextStep}`);
+        }
+    };
 
     renderCompanyOwnerInfo = () => {
         if(this.props.stepOne.formData.signingAuthority === '3') {
@@ -16,10 +26,8 @@ class StepOne extends Component {
     renderFormTitle = () => {
         if(this.props.stepOne.formData.signingAuthority === '3') {
             return (
-                <div className="row">
-                    <div className="step-form__info--text">
-                        <h5><b>Company owner information</b></h5>
-                    </div>
+                <div className="step-form__info--text">
+                    <h5><b>Company owner information</b></h5>
                 </div>
             )
         }
@@ -28,7 +36,7 @@ class StepOne extends Component {
     renderNewPersonTitle = () => {
         if(this.props.stepOne.addNewPerson) {
             return (
-                <div className="row--flex step-one__new-person-title">
+                <div className="step-one__new-person-title">
                     <div className="step-form__info--text">
                         <h5>Aditional contact person</h5>
                     </div>
@@ -69,19 +77,13 @@ class StepOne extends Component {
                     </div>
                 </div>
                 <div className="row step-form">
-                    <StepOneForm/>
-                </div>
-
-                {this.renderFormTitle()}
-
-                <div className="row step-form">
-                    {this.renderCompanyOwnerInfo()}
-                </div>
-
-                {this.renderNewPersonTitle()}
-
-                <div className="row step-form">
-                    {this.renderNewPerson()}
+                    <form id='stepOneForm' ref='stepForm' name='stepForm' onSubmit={(e) => {this.handleNext(e)}}>
+                        <StepOneForm/>
+                        {this.renderFormTitle()}
+                        {this.renderCompanyOwnerInfo()}
+                        {this.renderNewPersonTitle()}
+                        {this.renderNewPerson()}
+                    </form>
                 </div>
 
 
@@ -96,4 +98,4 @@ const mapStateToProps = ({stepOne}) => {
     }
 };
 
-export default connect(mapStateToProps, actions)(StepOne);
+export default withRouter(connect(mapStateToProps, actions)(StepOne));

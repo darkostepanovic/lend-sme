@@ -50,9 +50,8 @@ class StepOneForm extends Component {
     }
 
     render() {
-        // console.log(this.props.stepOne.formData);
         return (
-            <form className="step-form__form" ref='stepForm' name='stepForm' action="">
+            <div className="step-form__form">
                 <div className="step-form__form--single-input radio-input" id="radio-input">
                     <label htmlFor="radio-input">Title*</label>
                     <p>
@@ -96,11 +95,12 @@ class StepOneForm extends Component {
                         className="validate"
                         value={this.props.stepOne.formData.lastName}
                         onChange={(e) => {this.props.handleFormData('lastName', e.target.value)}}
+                        required={true}
                     />
                     <label htmlFor="last_name" className={this.props.stepOne.formData.lastName !== '' ? 'active' : ''}>Last Name *</label>
                 </div>
                 <div className="input-field step-form__form--single-input select-input">
-                    <select ref='signingAuthority' defaultValue={this.props.stepOne.formData.signingAuthority}>
+                    <select ref='signingAuthority' defaultValue={this.props.stepOne.formData.signingAuthority} required={true}>
                         <option value="0" disabled>Signing authority *</option>
                         <option value="1">Single</option>
                         <option value="2">Collective</option>
@@ -115,11 +115,12 @@ class StepOneForm extends Component {
                         className="validate"
                         value={this.props.stepOne.formData.function}
                         onChange={(e) => {this.props.handleFormData('function', e.target.value)}}
+                        required={true}
                     />
                     <label htmlFor="function" className={this.props.stepOne.formData.function !== '' ? 'active' : ''}>Function *</label>
                 </div>
                 <div className="input-field step-form__form--single-input text-input date-picker">
-                    <input readOnly={true} id="dob" type="text" ref='datepicker' className="datepicker" value={moment(this.props.stepOne.formData.dob).format('D MMMM, YYYY')}/>
+                    <input required={true} readOnly={true} id="dob" type="text" ref='datepicker' className="datepicker" value={moment(this.props.stepOne.formData.dob).format('D MMMM, YYYY')}/>
                     <label htmlFor="dob" className={this.props.stepOne.formData.dob !== '' ? 'active' : ''}>Date of birth *</label>
                 </div>
                 <div className="input-field step-form__form--single-input text-input">
@@ -129,6 +130,7 @@ class StepOneForm extends Component {
                         className="validate"
                         value={this.props.stepOne.formData.streetAddress}
                         onChange={(e) => {this.props.handleFormData('streetAddress', e.target.value)}}
+                        required={true}
                     />
                     <label htmlFor="streetAddress" className={this.props.stepOne.formData.streetAddress !== '' ? 'active' : ''}>Street address *</label>
                 </div>
@@ -139,6 +141,7 @@ class StepOneForm extends Component {
                         className="validate"
                         value={this.props.stepOne.formData.addressNumber}
                         onChange={(e) => {this.props.handleFormData('addressNumber', e.target.value)}}
+                        required={true}
                     />
                     <label htmlFor="addressNumber" className={this.props.stepOne.formData.addressNumber !== '' ? 'active' : ''}>Address number *</label>
                 </div>
@@ -149,6 +152,7 @@ class StepOneForm extends Component {
                         className="validate"
                         value={this.props.stepOne.formData.postcode}
                         onChange={(e) => {this.props.handleFormData('postcode', e.target.value)}}
+                        required={true}
                     />
                     <label htmlFor="postcode" className={this.props.stepOne.formData.postcode !== '' ? 'active' : ''}>Postcode *</label>
                 </div>
@@ -159,11 +163,12 @@ class StepOneForm extends Component {
                         className="validate"
                         value={this.props.stepOne.formData.city}
                         onChange={(e) => {this.props.handleFormData('city', e.target.value)}}
+                        required={true}
                     />
                     <label htmlFor="city" className={this.props.stepOne.formData.city !== '' ? 'active' : ''}>City *</label>
                 </div>
                 <div className="input-field step-form__form--single-input select-input">
-                    <select ref='country' defaultValue='0'>
+                    <select ref='country' required={true}>
                         <option value="0" disabled>Choose country: *</option>
                         <option value="1">Switzerland</option>
                         <option value="2">Lichtenstein</option>
@@ -181,10 +186,11 @@ class StepOneForm extends Component {
                         className="validate"
                         value={this.props.stepOne.formData.phone}
                         onChange={(e) => {this.props.handleFormData('phone', e.target.value)}}
+                        required={true}
                     />
                     <label htmlFor="phone" className={this.props.stepOne.formData.phone !== '' ? 'active' : ''}>Phone No. *</label>
                 </div>
-            </form>
+            </div>
         )
     }
 }

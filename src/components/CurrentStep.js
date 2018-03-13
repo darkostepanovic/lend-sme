@@ -12,7 +12,7 @@ class CurrentStep extends Component {
     renderCurrentStep = () => {
       switch (this.props.match.params.step) {
           case '1':
-              return <StepOne/>;
+              return <StepOne currentStep={this.props.match.params.step}/>;
           case '2':
               return <StepTwo/>;
           case '3':
