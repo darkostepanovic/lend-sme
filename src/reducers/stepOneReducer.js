@@ -8,7 +8,7 @@ const initialState = {
         title: '1',
         firstName: '',
         lastName: '',
-        signingAuthority: 0,
+        signingAuthority: 1,
         function: '',
         dob: new Date(0),
         streetAddress: '',

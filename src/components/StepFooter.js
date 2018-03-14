@@ -45,7 +45,7 @@ class StepFooter extends Component {
           return (
               <div className="step-footer__btn">
                   <button className='btn' onClick={this.handleBack}><i className="material-icons">chevron_left</i> Back</button>
-                  <button type='submit' className='btn' form={this.currentForm()} onClick={this.handleNext}>Next <i className="material-icons">chevron_right</i></button>
+                  <button type='submit' className='btn' form={this.currentForm()}>Next <i className="material-icons">chevron_right</i></button>
               </div>
           )
       }

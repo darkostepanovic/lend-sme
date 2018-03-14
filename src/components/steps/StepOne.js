@@ -6,6 +6,8 @@ import * as actions from '../../actions';
 import CompanyOwnerInfo from "../forms/CompanyOwnerInfo";
 import AddNewPerson from "../forms/AddNewPerson";
 
+import autosave from '../../assets/autosave.svg';
+
 class StepOne extends Component {
 
     handleNext = (e) => {
@@ -63,12 +65,13 @@ class StepOne extends Component {
     render() {
         return (
             <div className="step-one">
-                <div className="row--flex">
+                <div className="row--flex step-form__info">
                     <div className="step-form__info--text">
                         <h5>Contact person information</h5>
                     </div>
                     <div className="step-form__info--autosave">
-                        1
+                        <img src={autosave} alt="autosave"/>
+                        <span>Autosaved at 12.14 pm</span>
                     </div>
                 </div>
                 <div className="row--flex">
@@ -85,8 +88,6 @@ class StepOne extends Component {
                         {this.renderNewPerson()}
                     </form>
                 </div>
-
-
             </div>
         )
     }
