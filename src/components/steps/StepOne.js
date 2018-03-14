@@ -63,6 +63,7 @@ class StepOne extends Component {
     };
 
     render() {
+        console.log(this.props.stepOne);
         return (
             <div className="step-one">
                 <div className="row--flex step-form__info">

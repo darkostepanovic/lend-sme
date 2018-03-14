@@ -1,8 +1,20 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import StepTwoForm from "../forms/StepTwoForm";
 import autosave from "../../assets/autosave.svg";
+import CompanyHqInfo from "../forms/CompanyHqInfo";
 
 class StepTwo extends Component {
+    handleNext = (e) => {
+        e.preventDefault();
+        console.log(this.props.currentStep);
+        const currentStep = Number(this.props.currentStep);
+        const nextStep = currentStep + 1;
+        if (nextStep < 5) {
+            this.props.history.push(`/${nextStep}`);
+        }
+    };
+
     render() {
         return (
             <div className='step-two'>
@@ -23,6 +35,10 @@ class StepTwo extends Component {
                 <div className="row step-form">
                     <form id='stepTwoForm' ref='stepTwoForm' name='stepTwoForm' onSubmit={(e) => {this.handleNext(e)}}>
                         <StepTwoForm/>
+                        <div className="step-form__info--text">
+                            <h5><b>Company headquarters information</b></h5>
+                        </div>
+                        <CompanyHqInfo/>
                     </form>
                 </div>
             </div>
@@ -30,4 +46,4 @@ class StepTwo extends Component {
     }
 }
 
-export default StepTwo;
+export default withRouter(StepTwo);

@@ -1,4 +1,7 @@
-import {HANDLE_FORM_DATA, HANDLE_COMPANY_OWNER_DATA, HANDLE_NEW_PERSON_DATA, TOGGLE_NEW_PERSON_DATA, HANDLE_COMPANY_GENERAL_INFORMATION} from "./types";
+import {
+    HANDLE_FORM_DATA, HANDLE_COMPANY_OWNER_DATA, HANDLE_NEW_PERSON_DATA, TOGGLE_NEW_PERSON_DATA,
+    HANDLE_COMPANY_GENERAL_INFORMATION, HANDLE_COMPANY_HEADQUARTERS_INFORMATION
+} from "./types";
 
 export const handleFormData = (key, val) => dispatch => {
     if (key === 'firstName' || key === 'lastName' || key === 'function' || key === 'city') {
@@ -98,6 +101,34 @@ export const handleCompanyGeneralInfo = (key, val) => dispatch => {
         }
     } else {
         dispatch({type: HANDLE_COMPANY_GENERAL_INFORMATION, payload: {key, val}});
+    }
+};
+
+export const handleCompanyHeadquartersInfo = (key, val) => dispatch => {
+    if(key === 'city') {
+        let regex = new RegExp("^[a-zA-Z]+$");
+        if(regex.test(val) || val === '') {
+            dispatch({type: HANDLE_COMPANY_HEADQUARTERS_INFORMATION, payload: {key, val}});
+        } else return;
+    } else if (key === 'postcode') {
+        let regex = new RegExp("^[0-9]*$");
+        if(regex.test(val) || val === '') {
+            dispatch({type: HANDLE_COMPANY_HEADQUARTERS_INFORMATION, payload: {key, val}});
+        } else return;
+    } else if(key === 'address' || key === 'addressNumber') {
+        let regex = new RegExp("^[a-zA-Z\\d\\-_\\s]+$");
+        if(regex.test(val) || val === '') {
+            dispatch({type: HANDLE_COMPANY_HEADQUARTERS_INFORMATION, payload: {key, val}});
+        } else return;
+    // } else if (key === 'uid') {
+    //     let regex = new RegExp("^[0-9]*$");
+    //     if(regex.test(val) || val === '') {
+    //         const uid = `CHE-${val.substring(0,3)}.${val.substring(3, 3)}.${val.substring(6, 3)}`;
+    //         console.log(uid);
+    //         dispatch({type: HANDLE_COMPANY_HEADQUARTERS_INFORMATION, payload: {key, val: uid}});
+    //     } else return;
+    } else {
+        dispatch({type: HANDLE_COMPANY_HEADQUARTERS_INFORMATION, payload: {key, val}});
     }
 };
 

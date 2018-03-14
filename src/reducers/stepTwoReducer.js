@@ -1,4 +1,4 @@
-import { HANDLE_COMPANY_GENERAL_INFORMATION } from "../actions/types";
+import {HANDLE_COMPANY_GENERAL_INFORMATION, HANDLE_COMPANY_HEADQUARTERS_INFORMATION} from "../actions/types";
 
 const initialState = {
     generalInfo: {
@@ -13,6 +13,7 @@ const initialState = {
     headquartersInfo: {
         address: '',
         addressNumber: '',
+        postcode: '',
         city: '',
         country: '',
         uid: ''
@@ -33,6 +34,17 @@ export default function stepTwoReducer(state = initialState, action) {
                     ...state.generalInfo,
                     [key]: val
                 }
+            };
+        case HANDLE_COMPANY_HEADQUARTERS_INFORMATION:
+            const hqKey = action.payload.key;
+            const hqVal = action.payload.val;
+            return {
+                ...state,
+                headquartersInfo: {
+                    ...state.headquartersInfo,
+                    [hqKey]: hqVal
+                }
+
             };
         default:
             return state

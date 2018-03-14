@@ -22,20 +22,24 @@ class StepFooter extends Component {
         }
     };
 
-    currentForm = () => {
-      if(this.props.currentStep === '2') {
+    currentForm = (currentStep) => {
+      if(currentStep === 2) {
           return 'stepTwoForm'
-      } else return 'stepThreeForm';
+      } else if (currentStep === 3) {
+          return 'stepThreeForm';
+      } else if (currentStep === 4) {
+          return 'stepFourForm'
+      } else return 'stepOneForm';
     };
 
-    renderButtons = () => {
-      if(this.props.currentStep === '1') {
+    renderButtons = (currentStep) => {
+      if(currentStep === '1') {
           return (
               <div className="step-footer__btn">
                   <button type='submit' className='btn' form='stepOneForm'>Next <i className="material-icons">chevron_right</i></button>
               </div>
           )
-      } else if(this.props.currentStep === '4') {
+      } else if(currentStep === '4') {
           return (
               <div className="step-footer__btn">
                   <button className='btn' onClick={this.handleBack}><i className="material-icons">chevron_left</i> Back</button>
@@ -45,13 +49,19 @@ class StepFooter extends Component {
           return (
               <div className="step-footer__btn">
                   <button className='btn' onClick={this.handleBack}><i className="material-icons">chevron_left</i> Back</button>
-                  <button type='submit' className='btn' form={this.currentForm()}>Next <i className="material-icons">chevron_right</i></button>
+                  <button type='submit' className='btn' form={this.currentForm(currentStep)}>Next <i className="material-icons">chevron_right</i></button>
               </div>
           )
       }
     };
 
     render() {
+        let currentStep;
+        if (this.props.currentStep !== '1' && this.props.currentStep !== '2' && this.props.currentStep !== '3' && this.props.currentStep !== '4') {
+            currentStep = 1
+        } else {
+            currentStep = Number(this.props.currentStep);
+        }
         return (
             <div className="step-footer">
                 <div className="row">
@@ -61,7 +71,7 @@ class StepFooter extends Component {
                     <div className="step-footer--save">
                         <a>Save &amp; Go to Dashboard</a>
                     </div>
-                    {this.renderButtons()}
+                    {this.renderButtons(currentStep)}
                 </div>
             </div>
         )

@@ -120,7 +120,7 @@ class StepOneForm extends Component {
                     <label htmlFor="function" className={this.props.stepOne.formData.function !== '' ? 'active' : ''}>Function *</label>
                 </div>
                 <div className="input-field step-form__form--single-input text-input date-picker">
-                    <input required={true} readOnly={true} id="dob" type="text" ref='datepicker' className="datepicker" value={moment(this.props.stepOne.formData.dob).format('D MMMM, YYYY')}/>
+                    <input id="dob" type="text" ref='datepicker' className="datepicker" required={true}/>
                     <label htmlFor="dob" className={this.props.stepOne.formData.dob !== '' ? 'active' : ''}>Date of birth *</label>
                 </div>
                 <div className="input-field step-form__form--single-input text-input">
@@ -168,7 +168,7 @@ class StepOneForm extends Component {
                     <label htmlFor="city" className={this.props.stepOne.formData.city !== '' ? 'active' : ''}>City *</label>
                 </div>
                 <div className="input-field step-form__form--single-input select-input">
-                    <select ref='country' required={true}>
+                    <select ref='country' defaultValue={0} required={true}>
                         <option value="0" disabled>Choose country: *</option>
                         <option value="1">Switzerland</option>
                         <option value="2">Lichtenstein</option>

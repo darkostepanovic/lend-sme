@@ -14,13 +14,13 @@ class CurrentStep extends Component {
           case '1':
               return <StepOne currentStep={this.props.match.params.step}/>;
           case '2':
-              return <StepTwo/>;
+              return <StepTwo currentStep={this.props.match.params.step}/>;
           case '3':
-              return <StepThree/>;
+              return <StepThree currentStep={this.props.match.params.step}/>;
           case '4':
-              return <StepFour/>;
+              return <StepFour currentStep={this.props.match.params.step}/>;
           default:
-              return <StepOne/>;
+              return <StepOne currentStep='1'/>;
       }
     };
 
