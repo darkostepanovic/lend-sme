@@ -1,6 +1,6 @@
 import {
     HANDLE_FORM_DATA, HANDLE_COMPANY_OWNER_DATA, HANDLE_NEW_PERSON_DATA, TOGGLE_NEW_PERSON_DATA,
-    HANDLE_COMPANY_GENERAL_INFORMATION, HANDLE_COMPANY_HEADQUARTERS_INFORMATION
+    HANDLE_COMPANY_GENERAL_INFORMATION, HANDLE_COMPANY_HEADQUARTERS_INFORMATION, HANDLE_LOAN_DETAILS, HANDLE_COLLATERAL
 } from "./types";
 
 export const handleFormData = (key, val) => dispatch => {
@@ -132,4 +132,22 @@ export const handleCompanyHeadquartersInfo = (key, val) => dispatch => {
     }
 };
 
+export const handleLoanDetails = (key, val) => dispatch => {
+  if (key === 'loanAmount') {
+      let regex = new RegExp("^[0-9]*$");
+      if(regex.test(val) || val === '') {
+          dispatch({type: HANDLE_LOAN_DETAILS, payload: {key, val}});
+      } else return;
+  // }
+  // else if (key === 'loanDescription') {
+  //     let regex = new RegExp("^[a-zA-Z\\d\\-_\\s]+$");
+  //     if(regex.test(val) || val === '') {
+  //         dispatch({type: HANDLE_LOAN_DETAILS, payload: {key, val}});
+  //     } else return;
+  } else {
+      dispatch({type: HANDLE_LOAN_DETAILS, payload: {key, val}});
+  }
+};
+
+export const handleCollateral = (key, val) => dispatch => dispatch({type: HANDLE_COLLATERAL, payload: {key, val}});
 export const newPersonToggle = () => dispatch => dispatch({type: TOGGLE_NEW_PERSON_DATA});

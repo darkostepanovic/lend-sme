@@ -1,0 +1,41 @@
+.step-three {
+  .step-form {
+    &__info {
+      &--text {
+        max-width: 75%;
+        @include responsive(null, md) {
+          max-width: 100%;
+        }
+      }
+    }
+
+    &__form {
+      &--single-input {
+
+        &.textarea-input {
+          textarea {
+            min-height: 145px;
+            padding: 15px 25px;
+            margin-bottom: 0;
+            font-size: 16px;
+          }
+
+          label {
+            padding-left: 25px;
+
+            &.active {
+              padding-left: 10px;
+            }
+          }
+
+          span {
+            display: block;
+            font-size: 12px;
+            width: 100%;
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+}

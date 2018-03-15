@@ -13,14 +13,14 @@ class StepFooter extends Component {
     };
 
     // TEMPORARY FORM NAVIGATION!!! WILL REMOVE AFTER ADD STEP TWO, THREE, AND FOUR FORMS
-    handleNext = (e) => {
-        e.preventDefault();
-        const currentStep = Number(this.props.currentStep);
-        const nextStep = currentStep + 1;
-        if (nextStep < 5) {
-            this.props.history.push(`/${nextStep}`);
-        }
-    };
+    // handleNext = (e) => {
+    //     e.preventDefault();
+    //     const currentStep = Number(this.props.currentStep);
+    //     const nextStep = currentStep + 1;
+    //     if (nextStep < 5) {
+    //         this.props.history.push(`/${nextStep}`);
+    //     }
+    // };
 
     currentForm = (currentStep) => {
       if(currentStep === 2) {

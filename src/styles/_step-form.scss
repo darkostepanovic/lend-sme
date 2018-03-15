@@ -24,6 +24,12 @@
     &--remove {
       padding: 0 $gutter;
 
+      a {
+        color: $primary-color;
+        display: flex;
+        align-items: center;
+      }
+
       @include responsive(null, md) {
         flex: 0 0 100%;
       }
@@ -63,6 +69,12 @@
     flex-wrap: wrap;
     width: 100%;
     margin-top: 35px;
+
+    &--one-column {
+      .step-form__form--single-input {
+        width: 100%;
+      }
+    }
 
     &--two-columns {
       .step-form__form--single-input {
@@ -175,5 +187,10 @@
         }
       }
     }
+  }
+
+  #loan-term-radio-input {
+    width: 100%;
+    margin-bottom: 20px;
   }
 }

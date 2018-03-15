@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
-import moment from 'moment';
 import * as actions from '../../actions';
 
 import $ from 'jquery';
@@ -47,7 +46,6 @@ class StepTwoForm extends Component {
     };
 
     render() {
-        console.log(this.props.stepTwo);
         return (
             <div className="step-form__form step-form__form--two-columns">
                 <div className="input-field step-form__form--single-input text-input">
@@ -59,7 +57,7 @@ class StepTwoForm extends Component {
                         onChange={(e) => {this.props.handleCompanyGeneralInfo('companyName', e.target.value)}}
                         required={true}
                     />
-                    <label htmlFor="company_name">Company Name *</label>
+                    <label htmlFor="company_name" className={this.props.stepTwo.generalInfo.companyName !== '' ? 'active' : ''}>Company Name *</label>
                 </div>
                 <div className="input-field step-form__form--single-input select-input">
                     <select ref='industry' defaultValue={this.props.stepTwo.generalInfo.industry} required={true}>

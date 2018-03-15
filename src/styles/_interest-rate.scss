@@ -1,0 +1,54 @@
+.interest-rate {
+  width: 100%;
+  padding: 25px;
+  border-radius: 15px;
+  background-color: #fff7cf;
+  margin-bottom: 30px;
+
+  * {
+    font-size: 16px;
+    line-height: 16px;
+    margin: 0;
+  }
+
+  hr {
+    border-color: $text-primary-color;
+    opacity: 0.2;
+    margin-bottom: 15px;
+  }
+
+  &__header, &__monthly, &__insurance {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+
+    &--text, &--values {
+      display: flex;
+      flex: 0 0 30%;
+      justify-content: space-between;
+
+      p {
+        width: 50%;
+        text-align: right;
+      }
+    }
+  }
+
+  &__monthly {
+    &--values {
+      p {
+        font-size: 24px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  &__insurance {
+    margin-bottom: 0;
+    &--values {
+      p {
+        font-weight: bold;
+      }
+    }
+  }
+}

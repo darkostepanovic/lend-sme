@@ -7,7 +7,6 @@ import CompanyHqInfo from "../forms/CompanyHqInfo";
 class StepTwo extends Component {
     handleNext = (e) => {
         e.preventDefault();
-        console.log(this.props.currentStep);
         const currentStep = Number(this.props.currentStep);
         const nextStep = currentStep + 1;
         if (nextStep < 5) {

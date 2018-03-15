@@ -7,6 +7,7 @@ import CompanyOwnerInfo from "../forms/CompanyOwnerInfo";
 import AddNewPerson from "../forms/AddNewPerson";
 
 import autosave from '../../assets/autosave.svg';
+import bin from '../../assets/bin@3x.svg';
 
 class StepOne extends Component {
 
@@ -43,7 +44,7 @@ class StepOne extends Component {
                         <h5>Aditional contact person</h5>
                     </div>
                     <div className="step-form__info--remove">
-                        <a onClick={() => {this.props.newPersonToggle()}}>Remove person</a>
+                        <a onClick={() => {this.props.newPersonToggle()}}>Remove person <img src={bin} alt="remove_person_icon"/></a>
                     </div>
                 </div>
             )
