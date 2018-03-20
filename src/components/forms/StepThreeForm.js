@@ -32,7 +32,7 @@ class StepThreeForm extends Component {
                         value={this.props.stepThree.loanAmount}
                         onChange={(e) => {this.props.handleLoanDetails('loanAmount', e.target.value)}}
                     />
-                    <label htmlFor="loan_amount" className={this.props.stepThree.loanAmount !== '' ? 'active' : ''}>Loan category (CHF) *</label>
+                    <label htmlFor="loan_amount" className={this.props.stepThree.loanAmount !== '' ? 'active' : ''}>Loan amount (CHF) *</label>
                 </div>
                 <div className="input-field step-form__form--single-input select-input">
                     <select ref='loanCategory' defaultValue={this.props.stepThree.loanCategory} required={true}>

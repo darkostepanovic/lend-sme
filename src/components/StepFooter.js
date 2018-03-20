@@ -33,16 +33,19 @@ class StepFooter extends Component {
     };
 
     renderButtons = (currentStep) => {
-      if(currentStep === '1') {
+        console.log(currentStep);
+      if(currentStep === 1) {
           return (
               <div className="step-footer__btn">
                   <button type='submit' className='btn' form='stepOneForm'>Next <i className="material-icons">chevron_right</i></button>
               </div>
           )
-      } else if(currentStep === '4') {
+      } else if(currentStep === 4) {
           return (
               <div className="step-footer__btn">
                   <button className='btn' onClick={this.handleBack}><i className="material-icons">chevron_left</i> Back</button>
+                  <button type='submit' className='btn' form={this.currentForm(currentStep)}>Confirm &amp; Send <i className="material-icons">chevron_right</i></button>
+
               </div>
           )
       } else {

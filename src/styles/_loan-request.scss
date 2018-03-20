@@ -1,0 +1,70 @@
+.loan-request {
+  border-radius: 15px;
+  padding: $gutter;
+  background-color: #f0f0f0;
+  margin-top: 30px;
+
+  .interest-rate {
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    h4 {
+      margin: 0;
+    }
+
+    hr {
+      margin: 15px 0;
+      border-top-color: #cfcfcf;
+      border-left: none;
+      border-right: none;
+      border-bottom: none;
+    }
+  }
+
+  &__terms {
+    display: flex;
+    margin-bottom: 10px;
+
+    &--details {
+      flex: 0 0 30%;
+
+      p {
+        font-size: 24px;
+        line-height: 36px;
+        margin: 0;
+
+        small {
+          font-size: 10px;
+          line-height: 16px;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  &__checkbox {
+    label {
+      font-size: 16px;
+      line-height: 24px;
+      color: $text-secondary-color;
+      margin-bottom: 10px;
+
+      a {
+        color: $primary-color;
+      }
+    }
+  }
+
+  &__radio {
+    .radio-input {
+      p {
+        label {
+          font-size: 16px;
+          line-height: 24px;
+          color: $text-secondary-color;
+        }
+      }
+    }
+  }
+}
