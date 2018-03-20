@@ -21,7 +21,6 @@ class StepThreeForm extends Component {
     };
 
     render() {
-        console.log(this.props.stepThree);
         return (
             <div className="step-form__form step-form__form--two-columns">
                 <div className="input-field step-form__form--single-input text-input">

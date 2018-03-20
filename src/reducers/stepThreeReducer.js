@@ -9,7 +9,10 @@ const initialState = {
         promisaryNote: false,
         bankGuarantee: false,
         jointGuarantee: false,
-        accountsReceivable: false
+        accountsReceivable: false,
+        marketValue: '',
+        firstMortgage: '',
+        secondMortgage: ''
     }
 };
 
@@ -27,7 +30,7 @@ export default function stepTwoReducer(state = initialState, action) {
             const collateralValue = action.payload.val;
             return {
                 ...state,
-                colateral: {
+                collateral: {
                     ...state.collateral,
                     [collateralKey]: collateralValue
                 }

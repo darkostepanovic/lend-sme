@@ -149,5 +149,16 @@ export const handleLoanDetails = (key, val) => dispatch => {
   }
 };
 
-export const handleCollateral = (key, val) => dispatch => dispatch({type: HANDLE_COLLATERAL, payload: {key, val}});
+export const handleCollateral = (key, val) => dispatch => {
+    if (key === 'marketValue' || key === 'firstMortgage' || key === 'secondMortgage') {
+        let regex = new RegExp("^[0-9]*$");
+        if(regex.test(val) || val === '') {
+            dispatch({type: HANDLE_COLLATERAL, payload: {key, val}});
+        } else return;
+    } else {
+        dispatch({type: HANDLE_COLLATERAL, payload: {key, val}});
+    }
+
+
+};
 export const newPersonToggle = () => dispatch => dispatch({type: TOGGLE_NEW_PERSON_DATA});

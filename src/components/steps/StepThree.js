@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import StepThreeForm from "../forms/StepThreeForm";
 import autosave from '../../assets/autosave.svg';
 import LoanDescriptionForm from "../forms/LoanDescriptionForm";
+import CollateralForm from '../forms/CollateralForm';
 
 class StepThree extends Component {
 
@@ -40,6 +41,11 @@ class StepThree extends Component {
                                 as it is something that will be seen by the potential investor.</p>
                         </div>
                         <LoanDescriptionForm/>
+                        <div className="step-form__info">
+                            <h4><b>Collateral (optional)</b></h4>
+                            <p>If you can provide a collateral for your loan, you increase your chances to get a lower rate for your loan. Please select if you can provide any of the following:</p>
+                        </div>
+                        <CollateralForm/>
                     </form>
                 </div>
             </div>

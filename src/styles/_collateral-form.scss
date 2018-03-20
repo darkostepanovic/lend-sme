@@ -1,0 +1,9 @@
+.collateral-form {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+
+  &__single {
+    flex: 0 0 25%;
+  }
+}

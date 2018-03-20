@@ -31,6 +31,7 @@ form p:last-child {
     line-height: 25px;
     font-size: 1rem;
     user-select: none;
+    color: $text-primary-color;
   }
 
   /* checkbox aspect */
@@ -145,8 +146,9 @@ form p:last-child {
     height: 20px;
     width: 20px;
     background-color: transparent;
-    border: 2px solid $radio-empty-color;
-    top: 0px;
+    border: 2px solid $secondary-color;
+    border-radius: 5px;
+    top: 0;
     z-index: 0;
   }
 
@@ -171,7 +173,12 @@ form p:last-child {
       height: 20px;
       border: 2px solid $secondary-color;
       background-color: $secondary-color;
+      border-radius: 5px;
       z-index: 0;
+    }
+
+    + label {
+      color: $secondary-color;
     }
   }
 
