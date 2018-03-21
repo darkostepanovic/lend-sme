@@ -82,7 +82,7 @@ export const handleNewPersonData = (key, val) => dispatch => {
 };
 export const handleCompanyGeneralInfo = (key, val) => dispatch => {
     if(key === 'companyName') {
-        let regex = new RegExp("^[a-zA-Z]+$");
+        let regex = new RegExp("^[a-zA-Z\\d\\-_\\s]+$");
         if(regex.test(val) || val === '') {
             dispatch({type: HANDLE_COMPANY_GENERAL_INFORMATION, payload: {key, val}});
         } else return;
