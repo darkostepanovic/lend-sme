@@ -47,7 +47,7 @@
 
 [type="radio"]:not(:checked) + label:before,
 [type="radio"]:not(:checked) + label:after {
-  border: 2px solid $radio-empty-color;
+  border: 1px solid $radio-empty-color;
 }
 
 [type="radio"]:not(:checked) + label:after {

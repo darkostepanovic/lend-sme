@@ -76,8 +76,8 @@ class StepOne extends Component {
                         <span>Autosaved at 12.14 pm</span>
                     </div>
                 </div>
-                <div className="row--flex">
-                    <div className="step-form__info--text">
+                <div className="row--flex step-form__info">
+                    <div className="step-form__info--text description">
                         <p>The information below refferst to company representatives who will be contacted by LEND if any additional information is reqired for the loan process.</p>
                     </div>
                 </div>

@@ -10,14 +10,24 @@
       flex: 0 0 60%;
 
       @include responsive(null, md) {
-        flex: 0 0 100%;
-        padding: 0 $gutter;
+        flex: 0 0 50%;
+        padding: 0;
+
+        h5 {
+          line-height: 22px;
+        }
       }
 
       p {
         padding: 0 15px;
         border-left: 2px solid $text-primary-color;
         color: $text-secondary-color;
+      }
+
+      &.description {
+        @include responsive(null, md) {
+          flex: 0 0 100%;
+        }
       }
     }
 
@@ -31,7 +41,8 @@
       }
 
       @include responsive(null, md) {
-        flex: 0 0 100%;
+        flex: 0 0 50%;
+        padding: 0;
       }
     }
 
@@ -52,14 +63,15 @@
 
 
       @include responsive(null, md) {
-        flex: 0 0 100%;
-        padding: 0 $gutter;
+        flex: 0 0 50%;
+        padding: 0;
       }
     }
 
     @include responsive(null, md) {
       padding: 0 $gutter;
-      flex-direction: column-reverse;
+      margin-bottom: 30px;
+      flex-direction: row;
     }
   }
 
@@ -95,7 +107,7 @@
         position: relative;
         display: inline-block;
         margin-top: 0;
-        margin-right: 10px;
+        margin-right: 20px;
       }
 
       label {

@@ -26,8 +26,8 @@ class StepTwo extends Component {
                         <span>Autosaved at 12.14 pm</span>
                     </div>
                 </div>
-                <div className="row--flex">
-                    <div className="step-form__info--text">
+                <div className="row--flex step-form__info">
+                    <div className="step-form__info--text description">
                         <p>Please enter Company name according to commercial register entry</p>
                     </div>
                 </div>

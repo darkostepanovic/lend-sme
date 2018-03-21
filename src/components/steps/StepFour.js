@@ -18,8 +18,8 @@ class StepFour extends Component {
                 <div className="row">
                     <LoanRequest/>
                 </div>
-                <div className="row--flex">
-                    <div className="step-form__info--text">
+                <div className="row--flex step-form__info">
+                    <div className="step-form__info--text description">
                         <p>You have to agree with Terms & Conditions and
                             to promise you entered all data truthfully to send a loan request.</p>
                     </div>

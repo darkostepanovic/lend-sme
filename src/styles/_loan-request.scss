@@ -26,8 +26,17 @@
     display: flex;
     margin-bottom: 10px;
 
+    @include responsive(null, md) {
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
     &--details {
       flex: 0 0 30%;
+
+      @include responsive(null,md) {
+        flex: 0 0 100%;
+      }
 
       p {
         font-size: 24px;

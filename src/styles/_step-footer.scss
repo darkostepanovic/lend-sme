@@ -7,9 +7,26 @@
     background-color: #f0f0f0;
   }
 
+  &__btn {
+    @include responsive(null, md) {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &.step-one {
+      justify-content: flex-end;
+    }
+  }
+
   &__buttons {
     align-items: center;
     justify-content: space-between;
+
+    @include responsive(null, md) {
+      margin: 0;
+      flex-direction: column-reverse;
+    }
 
     i {
       vertical-align: bottom;
@@ -39,5 +56,11 @@
   &--save {
     color: $secondary-color;
     font-weight: bold;
+
+    @include responsive(null, md) {
+      width: 100%;
+      margin-top: 40px;
+      text-align: right;
+    }
   }
 }
